@@ -13,21 +13,41 @@ const transformactions = require('./');
 
 // XLS parsing
 
-// transformactions.parser.parse('test.xls', 'xls', {
-//   input: {
-//     headerLine: 0,
-//     contentStartsAt: 1,
-//   }
-// }).then((res) => console.log(res));
+transformactions.converter.convert({
+  path: 'test.txt',
+  type: 'plain',
+  options: {
+    headerLine: 0,
+    contentStartsAt: 1,
+    delimiter: ';',
+    newLineDelimiter: '\n'
+  },
+}, {
+  path: 'test.xls',
+  type: 'xls',
+  deletePrevious: false,
+  deleteBaseFile: false,
+  withHeaders: true
+}).then(() => console.log('Converted Successfully!'));
 
-// CSV parsing
-
-transformactions.parser.parse('test.csv', 'csv', {
+transformactions.parser.parse('test.xls', 'xls', {
   input: {
     headerLine: 0,
     contentStartsAt: 1,
-    delimiter: ';'
+    delimiter: ';',
+    newLineDelimiter: '\n',
+    sheetName: ''
   },
   headerKeys: true
 }).then((res) => console.log(res));
 
+// CSV parsing
+
+// transformactions.parser.parse('test.csv', 'csv', {
+//   input: {
+//     headerLine: 0,
+//     contentStartsAt: 1,
+//     delimiter: ';'
+//   },
+//   headerKeys: true
+// }).then((res) => console.log(res));
