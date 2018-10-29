@@ -54,13 +54,13 @@ transformations.parseXls('path', config);
 > **XLSX Parser**
 
 ```javascript
-transformations.parseXls('path', config);
+transformations.parseXlsx('path', config);
 ```
 
 > **CSV Parser**
 
 ```javascript
-transformations.parseXls('path', config);
+transformations.parseCsv('path', config);
 ```
 
 > **PLAIN Parser**
