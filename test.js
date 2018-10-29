@@ -15,7 +15,6 @@ const transformactions = require('./');
 
 transformactions.converter.convert({
   path: 'test.txt',
-  type: 'plain',
   options: {
     headerLine: 0,
     contentStartsAt: 1,
@@ -30,16 +29,17 @@ transformactions.converter.convert({
   withHeaders: true
 }).then(() => console.log('Converted Successfully!'));
 
-transformactions.parser.parse('test.xls', 'xls', {
-  input: {
-    headerLine: 0,
-    contentStartsAt: 1,
-    delimiter: ';',
-    newLineDelimiter: '\n',
-    sheetName: ''
-  },
-  headerKeys: true
-}).then((res) => console.log(res));
+// transformactions.parser.parse('test.xls', {
+//   input: {
+//     // headerLine: 0,
+//     contentStartsAt: 1,
+//     delimiter: ';',
+//     newLineDelimiter: '\n',
+//     sheetName: ''
+//   },
+//   headerKeys: true,
+//   autoHeaders: false,
+// }).then((res) => console.log(res));
 
 // CSV parsing
 
