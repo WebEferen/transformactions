@@ -29,7 +29,19 @@ transformactions.converter.convert({
   withHeaders: true
 }).then(() => console.log('Converted Successfully!'));
 
-transformactions.parser.parse('test.xls', {
+// transformactions.parser.parse('test.xls', 'xls', {
+//   input: {
+//     // headerLine: 0,
+//     contentStartsAt: 1,
+//     delimiter: ';',
+//     newLineDelimiter: '\n',
+//     sheetName: ''
+//   },
+//   headerKeys: true,
+//   autoHeaders: false,
+// }).then((res) => console.log(res));
+
+transformactions.parser.parseXls('test.xls', {
   input: {
     // headerLine: 0,
     contentStartsAt: 1,
