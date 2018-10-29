@@ -39,6 +39,12 @@ There are several functions to parse different types of files
 
 For any of that files there is one function to parse it:
 
+> **Whole Parser**
+
+```javascript
+transformactions.parse('path', config);
+```
+
 > **XLS Parser**
 
 ```javascript
